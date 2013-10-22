@@ -3,7 +3,11 @@
   -webkit-transition: @transition;  
   -moz-transition:    @transition;
   -ms-transition:     @transition; 
-  -o-transition:      @transition;  
+  -o-transition:      @transition;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;  
 }
 .rotate (@deg) {
   -webkit-transform: rotate(@deg);
@@ -20,29 +24,6 @@
   -o-transform:      translate(@x, @y);
 }
 
-.animation (@name, @duration: 1s, @delay: 0, @ease: ease) {
-  -webkit-animation: @name @duration @delay @ease;
-  -moz-animation:    @name @duration @delay @ease;
-  -ms-animation:     @name @duration @delay @ease;
-}
-
-@-webkit-keyframes animate {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-moz-keyframes animate {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes animate {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes animate {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 /* GLOBAL styles */
 body {
  background: #FFB347;
@@ -56,6 +37,34 @@ body {
  margin-top: -300px;
  overflow: hidden;
 }
+
+.child {
+  & > :nth-child(1) {
+    .translate(0px, 0px);
+    .transition(0.7s ease-out);
+  }
+  & :nth-child(2) {
+    .translate(0px, -234px);
+    .transition(0.7s ease-out);
+  }
+  & :nth-child(3) {
+    .translate(0px, -468px);
+    .transition(0.7s ease-out);
+  }
+  & :nth-child(4) {
+    .translate(0px, -702px);
+    .transition(0.7s ease-out);
+  }
+  & :nth-child(5) {
+    .translate(0px, -936px);
+    .transition(0.7s ease-out);
+  }
+  & :nth-child(6) {
+    .translate(0px, -1170px);
+    .transition(0.7s ease-out);
+  }
+}
+
 .center {
   position: absolute;
   left: 50%;
@@ -64,53 +73,34 @@ body {
   margin-top: -115px;
 
   &:hover .child > :nth-child(1) {
-    .transition(all 0.7s ease-out);
+    .transition(0.7s ease-out);
     .translate(220px, 0px);
+
   }
   &:hover .child > :nth-child(2) {
-    .transition(all 0.7s ease-out);
+    .transition(0.7s ease-out);
     .translate(-220px, -234px);
   }
 
   &:hover .child > :nth-child(3) {
-    .transition(all 0.7s ease-out);
+    .transition(0.7s ease-out);
     .translate(-110px, -284px);
   }
   &:hover .child > :nth-child(4) {
-    .transition(all 0.7s ease-out);
+    .transition(0.7s ease-out);
     .translate(110px, -518px);
   }
 
   &:hover .child > :nth-child(5) {
-    .transition(all 0.7s ease-out);
+    .transition(0.7s ease-out);
     .translate(-110px, -1120px);
   }
   &:hover .child > :nth-child(6) {
-    .transition(all 0.7s ease-out);
+    .transition(0.7s ease-out);
     .translate(110px, -1355px);
   }
 }
-.child {
 
-  & > :nth-child(1) {
-    .translate(0px, 0px);
-  }
-  & :nth-child(2) {
-    .translate(0px, -234px);
-  }
-  & :nth-child(3) {
-    .translate(0px, -468px);
-  }
-  & :nth-child(4) {
-    .translate(0px, -702px);
-  }
-  & :nth-child(5) {
-    .translate(0px, -936px);
-  }
-  & :nth-child(6) {
-    .translate(0px, -1170px);
-  }
-}
 /* HEXAGON style */
 .lab_item {
   width: 200px;
@@ -141,12 +131,12 @@ body {
   height: 100%;
   .rotate(-60deg);
   visibility: visible;
+  &:hover .hexagon-in2 {
+    background: #FFF;
+    .transition(0.7s ease-out);
+  }
 }
 
 .hexagon-in2 {
   background: #000;
 }
-
-
-
-
