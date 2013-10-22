@@ -3,11 +3,7 @@
   -webkit-transition: @transition;  
   -moz-transition:    @transition;
   -ms-transition:     @transition; 
-  -o-transition:      @transition;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -ms-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;  
+  -o-transition:      @transition; 
 }
 .rotate (@deg) {
   -webkit-transform: rotate(@deg);
@@ -73,30 +69,30 @@ body {
   margin-top: -115px;
 
   &:hover .child > :nth-child(1) {
-    .transition(0.7s ease-out);
+    .transition(0.7s ease-out .1s);
     .translate(220px, 0px);
 
   }
   &:hover .child > :nth-child(2) {
-    .transition(0.7s ease-out);
+    .transition(0.7s ease-out .4s);
     .translate(-220px, -234px);
   }
 
   &:hover .child > :nth-child(3) {
-    .transition(0.7s ease-out);
+    .transition(0.7s ease-out .3s);
     .translate(-110px, -284px);
   }
   &:hover .child > :nth-child(4) {
-    .transition(0.7s ease-out);
+    .transition(0.7s ease-out .2s);
     .translate(110px, -518px);
   }
 
   &:hover .child > :nth-child(5) {
-    .transition(0.7s ease-out);
+    .transition(0.7s ease-out .5s);
     .translate(-110px, -1120px);
   }
   &:hover .child > :nth-child(6) {
-    .transition(0.7s ease-out);
+    .transition(0.7s ease-out .6s);
     .translate(110px, -1355px);
   }
 }
