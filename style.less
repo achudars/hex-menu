@@ -28,6 +28,14 @@
 /* GLOBAL styles */
 body {
  background: #FFB347;
+ position: absolute;
+ width: 600px;
+ height: 600px;
+ display: inline-block;
+ left: 50%;
+ top: 50%; 
+ margin-left: -300px;
+ margin-top: -300px;
 }
 .center {
   position: absolute;
@@ -35,6 +43,27 @@ body {
   top: 50%; 
   margin-left: -100px;
   margin-top: -115px;
+}
+.child {
+
+  & > :nth-child(1) {
+    .translate(410px, 185px);
+  }
+  & :nth-child(2) {
+    .translate(-214px, 185px);
+  }
+  & :nth-child(3) {
+    .translate(210px, 20px);
+  }
+  & :nth-child(4) {
+    .translate(220px, 20px);
+  }
+  & :nth-child(5) {
+    .translate(120px, 202px);
+  }
+  & :nth-child(6) {
+    .translate(-190px, 384px);
+  }
 }
 /* HEXAGON style */
 .lab_item {
